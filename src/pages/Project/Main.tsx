@@ -29,7 +29,7 @@ const Home: React.FC = () => {
         console.log(111)
         const txtSearch = data ? data : formData.keyword
         if(txtSearch) {
-          const responseAuth = await axios.get(`http://api-test-eight-omega.vercel.app/api/trips?keyword=${txtSearch}`)
+          const responseAuth = await axios.get(`https://api-test-eight-omega.vercel.app/api/trips?keyword=${txtSearch}`)
           if (responseAuth.data.length > 0) {
             setData(responseAuth.data)
           } else {
