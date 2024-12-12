@@ -60,7 +60,7 @@ const Home: React.FC = () => {
     <>
     <div className="container mx-auto py-20">
       {/* Form */}
-      <div className="w-[50%] mx-auto p-4 bg-white border border-gray-300 rounded-lg shadow-md mb-20">
+      <div className="lg:w-[50%] md:w-[75%] mx-auto p-4 bg-white border border-gray-300 rounded-lg shadow-md mb-20">
         <div className="flex items-center justify-between ">
         <label htmlFor="name" className="block text-sm font-medium text-gray-700">ค้นหา</label>
           <input
