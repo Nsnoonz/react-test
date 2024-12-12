@@ -26,7 +26,6 @@ const Home: React.FC = () => {
   };
   const fnSeach = async (data: string) => {
       try {
-        console.log(111)
         const txtSearch = data ? data : formData.keyword
         if(txtSearch) {
           const responseAuth = await axios.get(`https://api-test-eight-omega.vercel.app/api/trips?keyword=${txtSearch}`)
@@ -52,6 +51,11 @@ const Home: React.FC = () => {
     if (searchParam) fnSeach(searchParam)
   }, []);
 
+  const fnEnter = (e: { key: string; }) => {
+    if (e.key === "Enter") {
+      fnSeach('');
+    }
+  };
   return (
     <>
     <div className="container mx-auto py-20">
@@ -65,6 +69,7 @@ const Home: React.FC = () => {
             name="keyword"
             value={formData.keyword}
             onChange={handleChange}
+            onKeyUp={fnEnter}
             className="w-[75%] p-2 border-2 rounded-md "
           />
           <button type="submit" onClick={() => fnSeach('')} className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
